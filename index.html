@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API Reference - Single Endpoint</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="docs-layout">
+    <aside class="sidebar">
+      <div class="brand">API Docs</div>
+      <nav class="nav">
+        <a href="#resource">Resource Description</a>
+        <a href="#endpoint">Endpoint</a>
+        <a href="#parameters">Parameters</a>
+        <a href="#request">Sample Request</a>
+        <a href="#response">Sample Response</a>
+        <a href="#response-description">Response Description</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <p class="eyebrow">REST API Reference</p>
+      </header>
+
+      <section id="resource" class="section">
+        <h2>Makes of Cars</h2>
+        <p>Contains information on all makes of cars as registered by united states department of transportation.</p>
+      </section>
+
+      <section id="endpoint" class="section">
+        <h2>Endpoint</h2>
+        <div class="endpoint-card">
+          <span class="method get">GET</span>
+          <code>api/vehicles/getallmakes</code>
+        </div>
+         <p class="page-summary">Returns a list of makes of cars.</p>
+      </section>
+
+      <section id="parameters" class="section">
+        <h2>Parameters</h2>
+        <h3>Query String Parameters</h3>
+        <table class="params-table">
+            <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Required/Optional</th>
+              <th>Description</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>format</td>
+              <td>Optional</td>
+              <td>The desired response format. Default is xml</td>
+              <td>string <br> Example: json, csv, xml</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="request" class="section">
+        <h2>Sample Request</h2>
+        <pre><code>curl -X GET "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json"</code></pre>
+      </section>
+
+      <section id="response" class="section">
+        <h2>Sample Response</h2>
+        <p>The following is a sample response from the  <code>api/vehicles/getallmakes</code> endpoint: </p>
+        <pre><code>
+    {
+    "Count": 12258,
+    "Message": "Response returned successfully",
+    "SearchCriteria": null,
+    "Results": [
+        {
+            "Make_ID": 12858,
+            "Make_Name": "#1 ALPINE CUSTOMS"
+        },
+        {
+            "Make_ID": 4877,
+            "Make_Name": "1/OFF KUSTOMS, LLC"
+        },
+        "..."
+        ]
+    }
+        </code></pre>
+      </section>
+
+      <section id="response-description" class="section">
+        <h2>Response Description</h2>
+        <p>The following tabe describes each item in the response.</p>
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>Response Item</th>
+              <th>Description</th>
+              <th>Data Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Count</td>
+              <td>The number of car makes returned by the request.</td>
+              <td>Integer</td>
+            </tr>
+            <tr>
+              <td>Message</td>
+              <td>The success or failure status of the HTTP request. value ranges from "No HTTP request was found" to "Response returned successfully".</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td>SearchCriteria</td>
+              <td>A filter to narrow down search result with defualt set to <code>null</code>, if set to <code>null</code> or ommited, the API performs a broad search.</td>
+              <td>Object | null </td>
+            </tr>
+            <tr>
+              <td>Results</td>
+              <td>The car makes details represented as array of objects.</td>
+              <td>Object | array </td>
+            </tr>
+            <tr>
+              <td>Results/Make_ID</td>
+              <td>The car make identifier, its unique to each car.</td>
+              <td>Integer</td>
+            </tr>
+            <tr>
+              <td>Results/Make_Name</td>
+              <td>The car make name, </td>
+              <td>Integer</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
