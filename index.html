@@ -34,7 +34,8 @@
         <h2>Endpoint</h2>
         <div class="endpoint-card">
           <span class="method get">GET</span>
-          <code>api/vehicles/getallmakes</code>
+          <code data-copy-source="endpoint">api/vehicles/getallmakes</code>
+          <button type="button" class="copy-btn" data-copy-target="endpoint" aria-label="Copy endpoint">Copy</button>
         </div>
          <p class="page-summary">Returns a list of makes of cars.</p>
       </section>
@@ -64,13 +65,24 @@
 
       <section id="request" class="section">
         <h2>Sample Request</h2>
-        <pre><code>curl -X GET "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json"</code></pre>
+        <div class="code-block">
+          <div class="code-actions">
+            <button type="button" class="copy-btn" data-copy-target="curl" aria-label="Copy sample request">Copy</button>
+            <button type="button" class="postman-btn" data-copy-target="curl" data-open-url="https://web.postman.co/" aria-label="Open sample request in Postman">Open in Postman</button>
+          </div>
+          <pre><code data-copy-source="curl">curl -X GET "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json"</code></pre>
+        </div>
+        <p class="table-note">In Postman: Import → Paste cURL.</p>
       </section>
 
       <section id="response" class="section">
         <h2>Sample Response</h2>
         <p>The following is a sample response from the  <code>api/vehicles/getallmakes</code> endpoint: </p>
-        <pre><code>
+        <div class="code-block">
+          <div class="code-actions">
+            <button type="button" class="copy-btn" data-copy-target="response" aria-label="Copy sample response">Copy</button>
+          </div>
+          <pre><code data-copy-source="response">
     {
     "Count": 12258,
     "Message": "Response returned successfully",
@@ -87,7 +99,8 @@
         "..."
         ]
     }
-        </code></pre>
+          </code></pre>
+        </div>
       </section>
 
       <section id="response-description" class="section">
@@ -130,12 +143,13 @@
             <tr>
               <td>Results/Make_Name</td>
               <td>The car make name, </td>
-              <td>Integer</td>
+              <td>String</td>
             </tr>
           </tbody>
         </table>
       </section>
     </main>
   </div>
+  <script src="script.js" defer></script>
 </body>
 </html>
