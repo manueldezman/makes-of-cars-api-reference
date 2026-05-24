@@ -1,4 +1,4 @@
-# Makers of Cars — API Reference (Hackmamba Sprint Week 3)
+# Makes of Cars — API Reference (Hackmamba Sprint Week 3)
 
 This project is my Week 3 submission for the Hackmamba API Documentation Sprint. Week 3 focuses on documenting one public REST API endpoint using the five core components of API reference documentation.
 
