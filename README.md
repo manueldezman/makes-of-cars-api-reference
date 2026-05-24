@@ -4,7 +4,7 @@ This project is my Week 3 submission for the Hackmamba API Documentation Sprint.
 
 ## Live link
 
-https://manueldezman.github.io/makers-of-cars-api-reference/#response-description
+https://manueldezman.github.io/makes-of-cars-api-reference/
 
 ## What I documented
 
